@@ -82,7 +82,9 @@ public class News extends DataSupport {
 	}
 
 	public List<Comment> getCommentList() {
-		return commentList;
+		// 懒加载，当需要得到某条新闻的评论时，才根据新闻id加载相应评论
+		return DataSupport.where("news_id = ?", String.valueOf(id)).find(
+				Comment.class);
 	}
 
 	public void setCommentList(List<Comment> commentList) {
