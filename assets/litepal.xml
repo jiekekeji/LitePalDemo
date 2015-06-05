@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <!-- 数据库名字 -->
+
+    <dbname value="demo" >
+    </dbname>
+
+    <!-- 数据库版本号 -->
+
+    <version value="1" >
+    </version>
+
+    <!-- 需要映射的模型(类的全路径) -->
+
+    <list>
+
+        <mapping class="com.wh.bean.News" >
+        </mapping>
+
+        <mapping class="com.wh.bean.Comment" >
+        </mapping>
+
+        <mapping class="com.wh.bean.Category" >
+        </mapping>
+
+        <mapping class="com.wh.bean.Introduction" >
+        </mapping>
+    </list>
+
+</litepal>
