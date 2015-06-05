@@ -2,10 +2,9 @@ package com.wh.ac;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.wh.lite.op.AddOp;
-import com.wh.lite.op.FuctionOp;
-import com.wh.lite.op.QueryOp;
 
 public class MainActivity extends Activity {
 
@@ -15,7 +14,14 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		// AddOp.addSingle();
-		AddOp.addMul();
+
+		new Thread() {
+			public void run() {
+				Log.i("start", System.currentTimeMillis() + "");
+				AddOp.addMul();
+				Log.i("stop", System.currentTimeMillis() + "");
+			};
+		}.start();
 
 		// AddOp.addList();
 		//
@@ -28,13 +34,12 @@ public class MainActivity extends Activity {
 		// Log.i("TAG", "已经保存过");
 		// }
 
-		QueryOp.findById();
-
-		QueryOp.findFirst();
-
-		QueryOp.findByCondition();
-
-		FuctionOp.function();
+		// QueryOp.findById();
+		//
+		// QueryOp.findFirst();
+		//
+		// QueryOp.findByCondition();
+		//
+		// FuctionOp.function();
 	}
-
 }

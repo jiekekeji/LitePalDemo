@@ -49,24 +49,27 @@ public class AddOp {
 	 */
 	public static void addMul() {
 
-		// Comment comment1 = new Comment();
-		// comment1.setContent("好评！");
-		// comment1.setPublishDate(new Date());
-		// comment1.save();
-		//
-		// Comment comment2 = new Comment();
-		// comment2.setContent("赞一个");
-		// comment2.setPublishDate(new Date());
-		// comment2.save();
-		//
-		// News news = new News();
-		// news.getCommentList().add(comment1);
-		// news.getCommentList().add(comment2);
-		// news.setTitle("第二条新闻标题");
-		// news.setContent("第二条新闻内容");
-		// news.setPublishDate(new Date());
-		// news.setCommentCount(news.getCommentList().size());
-		// news.save();
+		// 新添加关联记录
+		for (int i = 0; i < 100; i++) {
+			Comment comment1 = new Comment();
+			comment1.setContent("好评！");
+			comment1.setPublishDate(new Date());
+			comment1.save();
+
+			Comment comment2 = new Comment();
+			comment2.setContent("赞一个");
+			comment2.setPublishDate(new Date());
+			comment2.save();
+
+			News news = new News();
+			news.getCommentList().add(comment1);
+			news.getCommentList().add(comment2);
+			news.setTitle("第二条新闻标题");
+			news.setContent("第二条新闻内容");
+			news.setPublishDate(new Date());
+			news.setCommentCount(news.getCommentList().size());
+			news.save();
+		}
 
 		/***
 		 * id为3的新闻已存在评论数，需要在添加评论
